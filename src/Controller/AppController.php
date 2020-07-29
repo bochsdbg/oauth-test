@@ -12,8 +12,6 @@ class AppController extends AbstractController
      */
     public function index()
     {
-        return $this->render('app/index.html.twig', [
-            'words' => ['sky', 'cloud', 'wood', 'rock', 'forest', 'mountain', 'breeze'],
-        ]);
+        return $this->render('app/index.html.twig', []);
     }
 }

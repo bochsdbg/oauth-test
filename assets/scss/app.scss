@@ -1,3 +1,24 @@
-body {
-    background-color: lightgray;
+@import "~spectre.css";
+@import "~spectre.css/dist/spectre-icons.min.css";
+
+.login-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
+}
+
