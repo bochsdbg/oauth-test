@@ -2,6 +2,15 @@ security:
   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
   providers:
     users_in_memory: { memory: null }
+    app_user_provider:
+      entity:
+        class: App\Entity\User
+        property: username
+
+  encoders:
+    App\Entity\User:
+      algorithm: auto
+
   firewalls:
     dev:
       pattern: ^/(_(profiler|wdt)|scss|images|js)/
