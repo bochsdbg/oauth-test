@@ -21,7 +21,8 @@ const store = new Vuex.Store({
 });
 
 const router = new VueRouter({
-    // mode: 'history',
+    mode: 'history',
+    base: '/backend/',
     routes: [
         {path: '/', redirect: '/login'},
         {path: '/login', component: LoginPage},
