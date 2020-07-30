@@ -45,11 +45,17 @@ trait TimestampableTrait
         return $this;
     }
 
+    /**
+     * @ORM\PrePersist()
+     */
     public function onPrePersist()
     {
         $this->updatedAt = $this->createdAt = new \DateTimeImmutable('now');
     }
 
+    /**
+     * @ORM\PreUpdate()
+     */
     public function onPreUpdate()
     {
         $this->updatedAt = new \DateTimeImmutable('now');

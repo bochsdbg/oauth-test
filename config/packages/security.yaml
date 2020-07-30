@@ -1,7 +1,6 @@
 security:
   # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
   providers:
-    users_in_memory: { memory: null }
     app_user_provider:
       entity:
         class: App\Entity\User
@@ -13,12 +12,16 @@ security:
 
   firewalls:
     dev:
-      pattern: ^/(_(profiler|wdt)|scss|images|js)/
+      pattern: ^/(_(profiler|wdt)|assets)/
       security: false
+    frontend:
+      pattern: ^/backend/api/
+      anonymous: false
+      stateless: true
+      oauth2: true
     main:
       anonymous: true
       lazy: true
-      provider: users_in_memory
 
       # activate different ways to authenticate
       # https://symfony.com/doc/current/security.html#firewalls-authentication

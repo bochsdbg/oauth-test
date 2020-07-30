@@ -12,6 +12,6 @@ class AppController extends AbstractController
      */
     public function index()
     {
-        return $this->redirectToRoute('backend_index');
+        return $this->redirectToRoute('backend');
     }
 }
