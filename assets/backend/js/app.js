@@ -14,9 +14,10 @@ Vue.use(VueRouter);
 const store = new Vuex.Store({
     state: {
         user: {
-            id: null,
-            username: 'aaa',
+            id: window.backendGlobals.user_username,
+            username: window.backendGlobals.auth_username,
         },
+        auth_error: window.backendGlobals.auth_error,
     }
 });
 

@@ -4,6 +4,10 @@
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+  frontend:
+    oauth_client_id: 'test1'
+    oauth_auth_url: '/oauth/auth'
+    oauth_token_url: '/oauth/token'
 
 services:
   # default configuration for services in *this* file

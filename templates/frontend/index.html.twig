@@ -1,7 +1,15 @@
 {% extends 'base_frontend.html.twig' %}
 
 {% block body %}
-    <div id="app">
-        <app/>
+    <script>
+        {% autoescape 'js' %}
+        window.clientGlobals = {{ frontend_settings|json_encode()|raw }};
+        {% endautoescape %}
+    </script>
+
+    <div class="global-buttons btn-group">
+        <a href="{{ path('backend', {'page': 'login'}) }}" class="btn">Go To Backend</a>
     </div>
+
+    <div id="app"></div>
 {% endblock %}
