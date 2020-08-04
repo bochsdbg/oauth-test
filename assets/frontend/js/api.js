@@ -20,6 +20,7 @@ axios.interceptors.response.use(response => {
     const originalRequest = error.config;
 
     if ((error.response.status === 401 || error.response.status === 400) && originalRequest.url.endsWith(store.state.token_url)) {
+        store.commit('clearTokens');
         router.replace('/login');
         return Promise.reject(error);
     }
