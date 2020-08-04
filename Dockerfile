@@ -15,13 +15,13 @@ RUN apk update && \
     composer install && \
     yarn install && yarn build && \
     bin/console doctrine:database:create && \
-    mysql oauth_test <data.sql
+    mysql oauth_test <deploy/data.sql
 
 
 WORKDIR /root
 
-ADD script.sh /root/start.sh
-ADD data.sql /root/oauth-test/data.sql
+ADD deploy/script.sh /root/start.sh
+ADD deploy/data.sql /root/oauth-test/data.sql
 ADD deploy/.env.local /root/oauth-test/.env.local
 
 
